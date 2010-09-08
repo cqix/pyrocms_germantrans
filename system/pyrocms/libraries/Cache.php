@@ -103,8 +103,12 @@ class Cache
 		
 		// Clean given arguments to a 0-index array
 		$arguments = array_values($arguments);
+
+                //Add the CURRENT_DB_LANGUAGE
+                $arguments_dbgroup = $arguments;
+                array_push($arguments_dbgroup, CURRENT_DB_LANGUAGE);
 		
-		$cache_file = $property.DIRECTORY_SEPARATOR.dohash($method.serialize($arguments), 'sha1');
+		$cache_file = $property.DIRECTORY_SEPARATOR.dohash($method.serialize($arguments_dbgroup), 'sha1');
 		
 		// See if we have this cached
 		$cached_response = $this->get($cache_file);

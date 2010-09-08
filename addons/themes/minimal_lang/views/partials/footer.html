@@ -1,0 +1,7 @@
+<p>
+    {foreach $database_languages lang}
+        <a href="{site_url('home')}?lang={$lang}" ><img src="<?php echo image_path('icons/flags/{$lang}.gif'); ?>" {if $database_language==$lang}id="language"{/if} /></a>
+    {/foreach}
+</p>
+<p>&copy; {date("Y")} {$settings->item('site_name')}, all rights reserved</p>
+<p>Website powered by <a href="http://pyrocms.com/" title="PyroCMS">PyroCMS</a></p>

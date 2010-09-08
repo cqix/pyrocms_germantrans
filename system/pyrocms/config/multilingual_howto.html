@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Multilingual Howto</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        * {
+            font-size: 10pt;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+        h1 {
+            font-size: 18pt;
+        }
+        tt, pre, pre span {
+            font-family: "Courier New", "Courier", monospace;
+            color: #990000;
+        }
+        .string {
+            color: #00AA00;
+        }
+        .example {
+            padding-left: 20px;
+        }
+    </style>
+  </head>
+  <body>
+      <h1>Multilingual Howto</h1>
+      <p>
+          Follow this howto to add another database to PyroCMS to support different languages.
+      </p>
+      <ol>
+          <li>
+              <p>
+                  Copy the existing database and give it a rememberable name.
+              </p>
+              <h2>Example</h2>
+              <p class="example">
+                  If your main database is called <tt>pyrocms</tt> and you want to add another database for the German
+                  version call it <tt>pyrocms_german</tt>.
+              </p>
+          </li>
+          <li>
+              <p>
+                  Open up <tt>system/codeigniter/pyrocms/config/database.php</tt> and add the configuration for your
+                  second language.
+              </p>
+              <p>
+                  Name the new configuration entry <tt>live_</tt> followed by the 2 character language code.
+              </p>
+              <h2>Example</h2>
+              <pre class="example">
+$db[<span class="string">'live_de'</span>] = $db[<span class="string">'live'</span>];
+$db[<span class="string">'live_de'</span>] = <span class="string">'pyrocms_german'</span>;
+              </pre>
+          </li>
+          <li>
+              <p>You might want to add a language switch on the frontend.</p>
+              <p>Use the Theme "Minimal with language support" to do so.</p>
+          </li>
+      </ol>
+  </body>
+</html>

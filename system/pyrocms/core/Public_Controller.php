@@ -70,6 +70,10 @@ class Public_Controller extends MY_Controller
 	    {
 	    	$this->output->enable_profiler(TRUE);
 	    }
+
+            //Add database language info
+            $this->template->database_language = CURRENT_DB_LANGUAGE;
+            $this->template->database_languages = $this->config->item('database_languages');
 	    
 	    // Frontend data
 	    $this->load->library('variables/variables');

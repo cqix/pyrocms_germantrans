@@ -39,7 +39,7 @@
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('asset', 'database', 'session', 'cache', 'template', 'parser', 'settings/settings', 'users/ion_auth');
+$autoload['libraries'] = array('asset', 'langdatabase', 'session', 'cache', 'template', 'parser', 'settings/settings', 'users/ion_auth');
 
 
 /*
